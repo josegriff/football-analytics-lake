@@ -69,7 +69,12 @@ def render():
     try:
         with st.spinner("Loading latest standings..."):
             df = load_standings()
-            df = df.rename(columns={'goalsFor': 'goalsScored', 'goalsAgainst': 'goalsConceded'})
+            df = df.rename(columns={
+                'goalsfor': 'goalsScored',
+                'goalsagainst': 'goalsConceded',
+                'goaldifference': 'goalDifference',
+                'playedgames': 'playedGames'
+            })
         
             # Handle potential partition columns if not present (fallback)
             if 'year' not in df.columns:
