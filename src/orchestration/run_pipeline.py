@@ -50,9 +50,9 @@ def main():
     
     # Define pipeline steps
     steps = [
-        ("src/ingest_football.py", "Data Ingestion (API → S3 Raw)"),
-        ("src/transform_matches.py", "Transform Matches (Raw → Processed)"),
-        ("src/transform_standings.py", "Transform Standings (Raw → Processed)")
+        ("src/data/ingest_football.py", "Data Ingestion (API → S3 Raw)"),
+        ("src/data/transform.py", "Transform Matches (Raw → Processed)"),
+        ("src/data/transform_standings.py", "Transform Standings (Raw → Processed)")
     ]
     
     # Execute pipeline
